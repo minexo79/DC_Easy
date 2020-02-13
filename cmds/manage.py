@@ -6,7 +6,7 @@ class owner(Cog_extension):
 
     @commands.command() #截取對方資訊
     @commands.has_permissions(administrator=True)
-    async def avatar(self, ctx, member: discord.Member):
+    async def userinfo(self, ctx, member: discord.Member):
         '''查詢對方資訊'''
         roles = [role for role in member.roles] # 計算身分組 
         embed=discord.Embed(color=member.color)
