@@ -10,7 +10,7 @@ async def on_ready():
     
 @bot.command() #截取對方的頭貼
 async def avatar(ctx, id: int):
-    user = await client.fetch_user(id)
+    user = await bot.fetch_user(id)
     avatar_url = user.avatar_url
     embed=discord.Embed(color=0xff66fd)
     embed.set_image(url=avatar_url)
