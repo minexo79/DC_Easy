@@ -16,4 +16,4 @@ async def avatar(ctx, id: int):
     embed.set_image(url=avatar_url)
     await ctx.send(embed=embed)
 
-bot.run("YOUR TOKEN")
+bot.run("NjcwODExNTg5Njk1MjQyMjQw.XkTgiA.vUKt6EvK60GEFydivfLYpdplmAo")
