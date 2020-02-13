@@ -34,7 +34,7 @@
 > ```py
 > from core.datahook import yamlhook
 > 
-> p = datahook("config.py") # 指定檔案
+> p = datahook("config.yaml") # 指定檔案
 > p.open() # 開啟檔案 (唯讀模式)
 > 
 > print(p['bot']['token']) # 印出資料
