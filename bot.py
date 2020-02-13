@@ -1,11 +1,12 @@
 import discord
 from discord.ext import commands
-import yaml
+import yaml,os
 
 bot = commands.Bot(command_prefix="dcb.")
 
 @bot.event
 async def on_ready():
+    os.system("cls")
     await bot.change_presence(activity=discord.Game(name="use dcb.help."))
     print("[DCB] Bot is on!")
     
