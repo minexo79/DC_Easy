@@ -13,6 +13,6 @@
 
 |開發者|備註|
 |:-----|:----|
-|XOT|程式開發&專案總召|
-|HTG-YT|程式開發|
-|neo123440|程式開發|
+|[XOT](https://github.com/minexo79)|程式開發&專案總召|
+|[HTG-YT](https://github.com/HTG-YT)|程式開發|
+|[ShibaInu](https://github.com/neo123440)|程式開發|
