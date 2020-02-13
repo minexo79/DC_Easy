@@ -30,7 +30,7 @@
 ---
 ## 👾備註 - Note
 
-> ### (註一) `datahook`使用範例：
+> ### (註一) datahook使用範例：
 > ```py
 > from core.datahook import yamlhook
 > 
