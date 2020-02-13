@@ -1,25 +1,21 @@
 import discord
 from discord.ext import commands
-import yaml,os
+from core.datahook import yamlhook
+import os
 
 bot = commands.Bot(command_prefix="dcb.")
 
 @bot.event
 async def on_ready():
-    os.system("cls")
-    await bot.change_presence(activity=discord.Game(name="use dcb.help."))
+    await bot.change_presence(activity=discord.Game(name="dcb.help."))
     print("[DCB] Bot is on!")
-    
-# 抓取yaml檔案
-with open("config.yaml",'r',encoding="utf8") as f:
-    ydata = yaml.safe_load(f)
 
-@bot.command() #截取對方的頭貼
-async def avatar(ctx, id: int):
-    user = await bot.fetch_user(id)
-    avatar_url = user.avatar_url
-    embed=discord.Embed(color=0xff66fd)
-    embed.set_image(url=avatar_url)
-    await ctx.send(embed=embed)
+# 裝載Cog
+for filename in os.listdir('./cmds'):
+    if filename.endswith('.py'):
+        bot.load_extension(f'cmds.{filename[:-3]}')
 
-bot.run(ydata['bot']['token'])
+if __name__ == "__main__":
+    os.system("cls")
+    ydata = yamlhook("config.yaml").open()
+    bot.run(ydata['bot']['token'])

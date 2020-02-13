@@ -16,3 +16,25 @@
 |[XOT](https://github.com/minexo79)|程式開發&專案總召|
 |[HTG-YT](https://github.com/HTG-YT)|程式開發|
 |[ShibaInu](https://github.com/neo123440)|程式開發|
+
+---
+## 👾機器人架構 - Bot Architecture
+
+### `cmds`：指令放置區
+- `manage.py`：管理功能（重新裝載Cog，查詢人物資料，關閉機器人）
+### `core`：核心模組區
+- `classes.py`：Cog核心
+- `datahook.py`：資料勾手（更方便的讀取資料等...）（註一）
+
+---
+## 👾備註 - Note
+
+> ### (註一) `datahook`使用範例：
+> ```py
+> from core.datahook import yamlhook
+> 
+> p = datahook("config.py") # 指定檔案
+> p.open() # 開啟檔案 (唯讀模式)
+> 
+> print(p['bot']['token']) # 印出資料
+> ```
