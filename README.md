@@ -21,10 +21,11 @@
 ## 👾機器人架構 - Bot Architecture
 
 ### `cmds`：指令放置區
-- `manage.py`：管理功能（重新裝載Cog，查詢人物資料，關閉機器人）
+- `owner.py`：核心管理功能（重新裝載Cog，關閉機器人）
+- `manage.py`：一般管理功能（查詢人物資料）
 ### `core`：核心模組區
 - `classes.py`：Cog核心
-- `datahook.py`：資料勾手（更方便的讀取資料等...）（註一）
+- `datahook.py`：資料勾手（更方便的讀取資料等...）`（註一）`
 
 ---
 ## 👾備註 - Note
