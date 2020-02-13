@@ -17,7 +17,7 @@ class manage(Cog_extension):
     @commands.is_owner()     
     async def bye(self,ctx):
         '''關閉機器人'''
-        await ctx.send("`已關閉機器人。`")
+        await ctx.send("`機器人已關閉。`")
         await self.bot.close()
 
 def setup(bot):
