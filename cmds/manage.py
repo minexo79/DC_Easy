@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 from core.classes import Cog_extension
 
-class owner(Cog_extension):
+class manage(Cog_extension):
 
     @commands.command() #截取對方資訊
     @commands.has_permissions(administrator=True)
@@ -27,4 +27,4 @@ class owner(Cog_extension):
         await ctx.send(embed=embed)
 
 def setup(bot):
-    bot.add_cog(owner(bot))
+    bot.add_cog(manage(bot))
