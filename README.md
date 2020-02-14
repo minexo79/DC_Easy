@@ -2,7 +2,7 @@
 
 [![python-version](https://img.shields.io/pypi/pyversions/discord.py?style=flat)](https://www.python.org/)
 [![commit](https://img.shields.io/github/last-commit/minexo79/dc_base_bot)](https://github.com/minexo79/dc_base_bot)
-[![size](https://img.shields.io/github/repo-size/minexo79/DC_Easy?style=social)]
+[![size](https://img.shields.io/github/repo-size/minexo79/DC_Easy?style=social)]()
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
 ---
