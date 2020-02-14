@@ -1,8 +1,8 @@
 import discord
 from discord.ext import commands
-from core.classes import Cog_extension
+from core.classes import Cog_Extension
 
-class manage(Cog_extension):
+class manage(Cog_Extension):
 
     @commands.command() #重新裝載Cog
     @commands.is_owner() 
