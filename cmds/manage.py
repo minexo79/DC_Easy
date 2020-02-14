@@ -25,6 +25,21 @@ class manage(Cog_Extension):
         embed.add_field(name=f"身分組：{len(roles)}",value=" ".join([role.mention for role in roles]),inline=False) # 顯示身分組
         embed.set_footer(text=f"ID:{member.id}")
         await ctx.send(embed=embed)
+        
+    @commands.command()
+    async def serverinfo(self, ctx):
+        guild = ctx.guild
+        embed=discord.Embed()
+        embed.set_thumbnail(url=guild.icon_url)
+        embed.set_author(name=guild.name, icon_url=guild.icon_url)
+        embed.add_field(name="伺服器擁有者",value=guild.owner.name,inline=True)
+        embed.add_field(name="伺服器創立時間",value=guild.created_at.strftime("%Y.%m.%d-%H:%M:%S (UTC)"),inline=True)
+        embed.add_field(name="伺服器成員數量",value=guild.member_count,inline=True)
+        embed.add_field(name="文字頻道數量",value=len([textchannel for textchannel in ctx.guild.text_channels]),inline=True)
+        embed.add_field(name="語音頻道數量",value=len([voicechannel for voicechannel in ctx.guild.voice_channels]),inline=True)
+        embed.add_field(name="伺服器身分組數量",value=len([role for role in ctx.guild.roles]),inline=True)
+        embed.set_footer(text=f"ID:{guild.id}")
+        await ctx.send(embed=embed)
 
 def setup(bot):
     bot.add_cog(manage(bot))
