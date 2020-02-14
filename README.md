@@ -20,6 +20,21 @@
 |[ShibaInu](https://github.com/neo123440)|程式開發|
 
 ---
+## 👾使用教學 - Tutorial
+
+### 事前準備環境：
+
+- 一般電腦，並且安裝了作業系統。
+- python 3.6或更高。
+
+### 建置步驟：
+1. 將整個`git`下載並存放到任一目錄。
+2. 在`config.yaml`的`token: `填入bot所需要的Token碼。
+3. 打開`powershell.exe`，進入到你的機器人存放目錄。
+4. 輸入`pip install requirements.txt`，並等待安裝完畢。
+5. 輸入`python bot.py`即可運行。
+
+---
 ## 👾機器人架構 - Bot Architecture
 
 ### `cmds`：指令放置區
