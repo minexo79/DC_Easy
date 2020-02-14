@@ -26,9 +26,9 @@
 - `manage.py`：一般管理功能（查詢人物，群組資訊）
 - `event.py`：事件管理功能（錯誤處理）
 ### `core`：核心模組區
-- `errors.py`：錯誤處理`（註二）`
 - `classes.py`：Cog核心
 - `datahook.py`：資料勾手（更方便的讀取資料等...）`（註一）`
+- `errors.py`：錯誤處理`（註二）`
 
 ---
 ## 👾備註 - Note
