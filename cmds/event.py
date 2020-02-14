@@ -3,7 +3,7 @@ from discord.ext import commands
 from core.classes import Cog_Extension
 from core.errors import Errors
 
-class error(Cog_Extension):
+class event(Cog_Extension):
 
     @commands.Cog.listener()
     async def on_command_error(self, ctx, error):
@@ -17,4 +17,4 @@ class error(Cog_Extension):
             pass
 
 def setup(bot):
-    bot.add_cog(error(bot))
+    bot.add_cog(event(bot))

@@ -10,6 +10,8 @@ class Errors():
         errormsg = f"[DCB] {member}:{error}"
         # 印出至console
         print(errormsg)
+
+        # 聊天室顯示
         if process == "custom": # 自訂錯誤處理
             pass
 
