@@ -1,4 +1,4 @@
-# dc_base_bot
+# DC_Easy
 
 [![python-version](https://img.shields.io/pypi/pyversions/discord.py?style=flat)](https://www.python.org/)
 [![commit](https://img.shields.io/github/last-commit/minexo79/dc_base_bot)](https://github.com/minexo79/dc_base_bot)
@@ -24,7 +24,9 @@
 - `info.py`：提供資訊（關於機器人，查詢延遲）
 - `owner.py`：核心管理功能（重新裝載Cog，關閉機器人）
 - `manage.py`：一般管理功能（查詢人物，群組資訊）
+- `event.py`：事件管理功能（錯誤處理）
 ### `core`：核心模組區
+- `errors.py`：錯誤處理`（註二）`
 - `classes.py`：Cog核心
 - `datahook.py`：資料勾手（更方便的讀取資料等...）`（註一）`
 
@@ -39,4 +41,13 @@
 > p.open() # 開啟檔案 (唯讀模式)
 > 
 > print(p['bot']['token']) # 印出資料
+> ```
+
+> ### (註二) error使用範例：
+> ```py
+> from core.errors import Errors
+> 
+> async def on_command_error(self, ctx, error): # 出現指令錯誤
+>   await Errors.error_process(self,ctx,error) # 呼叫錯誤處理器
+> 
 > ```
