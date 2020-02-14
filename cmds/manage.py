@@ -28,6 +28,7 @@ class manage(Cog_Extension):
         
     @commands.command()
     async def serverinfo(self, ctx):
+        '''伺服器資訊'''
         guild = ctx.guild
         embed=discord.Embed()
         embed.set_thumbnail(url=guild.icon_url)
@@ -35,9 +36,9 @@ class manage(Cog_Extension):
         embed.add_field(name="伺服器擁有者",value=guild.owner.name,inline=True)
         embed.add_field(name="伺服器創立時間",value=guild.created_at.strftime("%Y.%m.%d-%H:%M:%S (UTC)"),inline=True)
         embed.add_field(name="伺服器成員數量",value=guild.member_count,inline=True)
-        embed.add_field(name="文字頻道數量",value=len([textchannel for textchannel in ctx.guild.text_channels]),inline=True)
-        embed.add_field(name="語音頻道數量",value=len([voicechannel for voicechannel in ctx.guild.voice_channels]),inline=True)
-        embed.add_field(name="伺服器身分組數量",value=len([role for role in ctx.guild.roles]),inline=True)
+        embed.add_field(name="文字頻道數量",value=len(guild.text_channels),inline=True)
+        embed.add_field(name="語音頻道數量",value=len(guild.voice_channels),inline=True)
+        embed.add_field(name="伺服器身分組數量",value=len(guild.roles),inline=True)
         embed.set_footer(text=f"ID:{guild.id}")
         await ctx.send(embed=embed)
 
