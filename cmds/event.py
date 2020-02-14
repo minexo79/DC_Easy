@@ -9,7 +9,10 @@ class error(Cog_Extension):
     async def on_command_error(self, ctx, error):
         try:
             # 傳送至錯誤處理器
-            await Errors.error_process(self,ctx,error)
+            await Errors.error_process(self,ctx,error,process="default")
+            # 一般方式處理： process = "default"
+            # 自訂方式處理： process = "custom"
+            
         except AttributeError:
             pass
 
