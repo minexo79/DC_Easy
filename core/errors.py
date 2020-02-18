@@ -5,7 +5,7 @@ from core.classes import Cog_Extension
 class Errors():
 
     # 錯誤處理器
-    async def error_process(self,ctx,error,process='default'):
+    async def error_process(self,ctx,error,process="default"):
         member = ctx.author.name
         errormsg = f"[DCB] {member}:{error}"
         # 印出至console
@@ -13,7 +13,10 @@ class Errors():
 
         # 聊天室顯示
         if process == "custom": # 自訂錯誤處理
-            pass
+            embed=discord.Embed()
+            embed.add_field(name="使用者",value=member,inline=False)
+            embed.add_field(name="錯誤原因",value=error,inline=False)
+            await ctx.send(embed=embed)
 
         else: # 一般錯誤處理
             embed=discord.Embed()

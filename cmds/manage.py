@@ -1,8 +1,22 @@
 import discord
 from discord.ext import commands
 from core.classes import Cog_Extension
+from core.datahook import yamlhook
+from core.errors import Errors
 
 class manage(Cog_Extension):
+
+    @commands.command()
+    async def check(self,ctx):
+        '''檢查自訂權限'''
+        ydata = yamlhook("config.yaml").open()
+        if ctx.author.id == ydata['bot']['owner']:
+            await ctx.send("你已在自訂權限名單內，恭喜可以存取。")
+        else:
+            error = "使用者沒有自訂權限(不在自訂權限名單內)。"
+            # 因為process是自訂，錯誤訊息需自行撰寫。
+            await Errors.error_process(self,ctx,error,process="custom")
+            # 自訂錯誤訊息
 
     @commands.command() #截取對方資訊
     @commands.has_permissions(administrator=True)
