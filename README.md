@@ -3,7 +3,7 @@
 ### it's XOT branch!!! 
 
 > ### 2/18 自訂權限
-> - `check` (自訂權限檢查)
+> - `owncheck` (自訂權限檢查)
 > - yaml：
 > - ```yaml
 >   bot:

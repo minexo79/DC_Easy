@@ -21,5 +21,5 @@ if __name__ == "__main__":
     # linux or other : os.system("clear")
     os.system("cls")
     # 抓取 bot token
-    ydata = yamlhook("config.yaml").open()
+    ydata = yamlhook("config.yaml").load()
     bot.run(ydata['bot']['token'])

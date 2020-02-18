@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 from core.classes import Cog_Extension
 
-class manage(Cog_Extension):
+class owner(Cog_Extension):
 
     @commands.command() #重新裝載Cog
     @commands.is_owner() 
@@ -21,4 +21,4 @@ class manage(Cog_Extension):
         await self.bot.close()
 
 def setup(bot):
-    bot.add_cog(manage(bot))
+    bot.add_cog(owner(bot))
