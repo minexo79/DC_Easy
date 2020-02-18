@@ -10,7 +10,7 @@ class manage(Cog_Extension):
     async def check(self,ctx):
         '''檢查自訂權限'''
         ydata = yamlhook("config.yaml").open()
-        if ydata['bot']['owner'] in ctx.author.id:
+        if ctx.author.id in ydata['bot']['owner']:
             await ctx.send("你已在自訂權限名單內，恭喜可以存取。")
         else:
             error = "使用者沒有自訂權限(不在自訂權限名單內)。"
