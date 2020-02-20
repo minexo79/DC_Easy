@@ -13,7 +13,7 @@ class info(Cog_Extension):
     async def about(self,ctx):
         '''關於機器人'''
         embed=discord.Embed(title="About Me")
-        embed.set_thumbnail(url="https://raw.githubusercontent.com/minexo79/DC_Easy/xot/img/logo.png?token=AM6JXBK4BSUO2QL2UKVYANS6K5ZBY") # 機器人頭貼
+        embed.set_thumbnail(url="https://raw.githubusercontent.com/minexo79/DC_Easy/master/img/logo.png") # 機器人頭貼
         embed.add_field(name="名稱",value="DC_Easy",inline=False)
         embed.add_field(name="版本",value="1.0",inline=False)
         embed.add_field(name="簡介",value="Just for the Beginner.",inline=False)
