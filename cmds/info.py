@@ -13,6 +13,7 @@ class info(Cog_Extension):
     async def about(self,ctx):
         '''關於機器人'''
         embed=discord.Embed(title="About Me")
+        embed.set_thumbnail(url="https://raw.githubusercontent.com/minexo79/DC_Easy/xot/img/logo.png?token=AM6JXBK4BSUO2QL2UKVYANS6K5ZBY") # 機器人頭貼
         embed.add_field(name="名稱",value="DC_Easy",inline=False)
         embed.add_field(name="版本",value="1.0",inline=False)
         embed.add_field(name="簡介",value="Just for the Beginner.",inline=False)
@@ -38,7 +39,7 @@ class info(Cog_Extension):
             embed.add_field(name="對方狀態",value=member.status,inline=True) # 顯示對方狀態
         embed.add_field(name="機器人",value=member.bot,inline=True) # 顯示對方狀態 
         embed.add_field(name=f"身分組：{len(roles)}",value=" ".join([role.mention for role in roles]),inline=False) # 顯示身分組
-        embed.set_footer(text=f"ID:{member.id}")
+        embed.set_footer(text=f"👾ID:{member.id}")
         await ctx.send(embed=embed)
         
     @commands.command()
@@ -54,7 +55,7 @@ class info(Cog_Extension):
         embed.add_field(name="文字頻道數量",value=len(guild.text_channels),inline=True)
         embed.add_field(name="語音頻道數量",value=len(guild.voice_channels),inline=True)
         embed.add_field(name="伺服器身分組數量",value=len(guild.roles),inline=True)
-        embed.set_footer(text=f"ID:{guild.id}")
+        embed.set_footer(text=f"👾ID:{guild.id}")
         await ctx.send(embed=embed)
 
 def setup(bot):

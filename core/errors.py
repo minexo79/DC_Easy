@@ -16,6 +16,7 @@ class Errors():
             embed=discord.Embed()
             embed.add_field(name="使用者",value=member,inline=False)
             embed.add_field(name="錯誤原因",value=error,inline=False)
+            embed.set_footer(text="👾")
             await ctx.send(embed=embed)
 
         else: # 一般錯誤處理
@@ -35,4 +36,5 @@ class Errors():
             embed.add_field(name="錯誤原因",value=problem,inline=False)
             # 加框: 粗體
             embed.add_field(name="錯誤訊息",value=f"**{error}**",inline=False)
+            embed.set_footer(text="👾")
             await ctx.send(embed=embed)
