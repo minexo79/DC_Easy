@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 from core.classes import Cog_Extension
 from core.datahook import yamlhook
-from core.errors import Errors
+from core.errors import error_process
 
 class manage(Cog_Extension):
 
@@ -16,29 +16,29 @@ class manage(Cog_Extension):
             else:
                 error = "使用者沒有自訂權限(不在自訂權限名單內)。"
                 # 因為process是自訂，錯誤訊息需自行撰寫。
-                await Errors.error_process(self,ctx,error,process="custom")
+                await error_process(ctx,error,process="custom")
                 # 自訂錯誤訊息
             
         except TypeError: # 權限名單是空的
             error = "權限名單為空。"
-            await Errors.error_process(self,ctx,error,process="custom")      
+            await error_process(ctx,error,process="custom")      
 
     @commands.command()
     async def ownadd(self,ctx,member:discord.Member):
         '''增加自訂權限者'''
         ydata = yamlhook("config.yaml").load()
-        if ctx.author.id in ydata['bot']['owner']:
-            if ctx.author.id not in ydata['bot']['owner']: # 再檢查一次，防止有兩個同樣的ID存在
-                did = member.id
+        did = member.id
+        if ctx.author.id in ydata['bot']['owner']: # 檢查一次，使用者是否在權限名單內
+            if did not in ydata['bot']['owner']: # 再檢查一次，防止有兩個同樣的ID存在
                 yamlhook("config.yaml").owner(did,process="append")
                 # 輸出增加成功
                 await ctx.send(f"✅自訂權限者`{member.display_name}`已增加！")
             else:
                 error = "使用者已在自訂權限名單內。"
-                await Errors.error_process(self,ctx,error,process="custom")                
+                await error_process(ctx,error,process="custom")                
         else:
             error = "使用者沒有自訂權限(不在自訂權限名單內)。"
-            await Errors.error_process(self,ctx,error,process="custom")
+            await error_process(ctx,error,process="custom")
 
     @commands.command()
     async def ownre(self,ctx,member:discord.Member):
@@ -52,10 +52,10 @@ class manage(Cog_Extension):
                 await ctx.send(f"✅自訂權限者`{member.display_name}`已移除！")
             else:
                 error = "使用者沒有自訂權限(不在自訂權限名單內)。"
-                await Errors.error_process(self,ctx,error,process="custom")
+                await error_process(ctx,error,process="custom")
         except ValueError: # 找不到ID
             error = "名單內找不到使用者ID，或許已經刪除。"
-            await Errors.error_process(self,ctx,error,process="custom")                  
+            await error_process(ctx,error,process="custom")                 
             
 
 def setup(bot):

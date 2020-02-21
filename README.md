@@ -64,13 +64,13 @@
 
 > ### (註二) error使用範例：
 > ```py
-> from core.errors import Errors
+> from core.errors import error_process
 > 
 > async def on_command_error(self, ctx, error): # 出現指令錯誤
->   await Errors.error_process(self,ctx,error,process="default") # 呼叫錯誤處理器
+>   await error_process(ctx,error,process="default") # 呼叫錯誤處理器
 >   # 一般方式處理： process = "default"
 >   # 自訂方式處理： process = "custom"
 >   # process指定custom，錯誤原因需要自己撰寫：
 >   error = "自訂錯誤原因"。
->   await Errors.error_process(self,ctx,error,process="default") # 呼叫錯誤處理器
+>   await error_process(ctx,error,process="custom") # 呼叫錯誤處理器
 > ```
