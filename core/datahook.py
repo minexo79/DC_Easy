@@ -1,6 +1,9 @@
 import yaml
 
+# --------------------
 # yd : yaml data
+# 資料勾手
+# --------------------
 
 class yamlhook:
     def __init__(self,filename):

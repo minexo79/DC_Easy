@@ -2,7 +2,11 @@ import discord
 from discord.ext import commands
 from core.classes import Cog_Extension
 
+# --------------------
+# 
 # 錯誤處理器
+# --------------------
+
 async def error_process(ctx,error,process="default"):
     member = ctx.author.name
     errormsg = f"[DCB] {member}:{error}"
