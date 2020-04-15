@@ -2,8 +2,8 @@
 
 [![python-version](https://img.shields.io/pypi/pyversions/discord.py?style=flat)](https://www.python.org/)
 [![discord.py](https://img.shields.io/pypi/v/discord.py)](https://pypi.org/project/discord.py/)
-[![commit](https://img.shields.io/github/last-commit/minexo79/dc_base_bot)](https://github.com/minexo79/dc_base_bot)
-[![size](https://img.shields.io/github/repo-size/minexo79/DC_Easy?style=social)]()
+[![commit](https://img.shields.io/github/last-commit/minexo79/DC_Easy)](https://github.com/minexo79/DC_Easy)
+[![size](https://img.shields.io/github/repo-size/minexo79/DC_Easy?style=social)](https://github.com/minexo79/DC_Easy)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
 ---
@@ -64,13 +64,13 @@
 
 > ### (註二) error使用範例：
 > ```py
-> from core.errors import Errors
+> from core.errors import error_process
 > 
 > async def on_command_error(self, ctx, error): # 出現指令錯誤
->   await Errors.error_process(self,ctx,error,process="default") # 呼叫錯誤處理器
+>   await error_process(ctx,error,process="default") # 呼叫錯誤處理器
 >   # 一般方式處理： process = "default"
 >   # 自訂方式處理： process = "custom"
 >   # process指定custom，錯誤原因需要自己撰寫：
 >   error = "自訂錯誤原因"。
->   await Errors.error_process(self,ctx,error,process="default") # 呼叫錯誤處理器
+>   await error_process(ctx,error,process="custom") # 呼叫錯誤處理器
 > ```

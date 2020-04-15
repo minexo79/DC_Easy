@@ -16,7 +16,7 @@ class info(Cog_Extension):
         embed.set_thumbnail(url="https://raw.githubusercontent.com/minexo79/DC_Easy/master/img/logo.png") # 機器人頭貼
         embed.add_field(name="名稱",value="DC_Easy",inline=False)
         embed.add_field(name="版本",value="1.0",inline=False)
-        embed.add_field(name="簡介",value="Just for the Beginner.",inline=False)
+        embed.add_field(name="簡介",value="Just for Beginner.",inline=False)
         embed.set_footer(text="👾")
         await ctx.send(embed=embed)
 
