@@ -8,6 +8,11 @@ from discord.ext.commands import check
 # Cog 核心
 # --------------------
 
+# --------------------
+#
+# Cog 核心
+# --------------------
+
 class Cog_Extension(commands.Cog):
     def __init__(self,bot):
         self.bot = bot
