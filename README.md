@@ -57,7 +57,7 @@ p.load() # 開啟檔案 (唯讀模式)
 print(p['bot']['token']) # 印出資料
 ```
 
-> ### (註二) error使用範例：
+### (註二) error使用範例：
 ```py
 from core.errors import error_process
 
